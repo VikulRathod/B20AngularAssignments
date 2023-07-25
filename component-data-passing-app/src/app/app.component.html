@@ -1,0 +1,6 @@
+<div class="container mt-4">
+  <h2>{{post.title}}</h2>
+  <div>By: {{post.author}}</div>
+  <p>{{post.body}}</p> 
+  <app-comments [id]="post.id"></app-comments>
+</div>

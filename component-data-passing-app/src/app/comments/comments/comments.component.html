@@ -1,0 +1,21 @@
+<h3>Comments ({{comments.length}})</h3>
+<hr />
+<div *ngIf="comments.length>0">
+    <div *ngFor="let item of comments">
+        <p>{{item.body}}</p>
+    </div>
+</div>
+<p *ngIf="comments.length==0">No Comment found!</p>
+<div class="col-sm-8">
+    <h4>Add Comment</h4>
+    <hr />
+    <div class="mb-3"> 
+        <label class="form-label">Comment</label>
+        <textarea type="text" name="body" class="form-control" 
+        [(ngModel)]="comment.body"></textarea>
+    </div>
+    <div class="mb-3"> 
+        <input type="submit" value="Save" class="btn btn-primary" 
+        (click)="SaveComment()" /> 
+    </div>
+</div>
