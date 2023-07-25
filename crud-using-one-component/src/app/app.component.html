@@ -1,0 +1,48 @@
+<div class="container mt-4">
+  <h1>Single Component: CRUD Operations</h1>
+  <hr />
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Product Id</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let u of products">
+        <td>{{u.id}}</td>
+        <td>{{u.name | titlecase}}</td>
+        <td>{{u.price | currency : 'INR'}}</td>
+        <td> 
+          <button (click)="EditProduct(u.id)" class="btn btn-success">Edit</button> 
+          &nbsp; 
+          <button (click)="DeleteProduct(u.id, u.name)" 
+          class="btn btn-warning">Delete</button> 
+        </td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td> 
+          <input type="number" [readonly]="isEdit" [(ngModel)]="product.id" 
+          placeholder="Product Id" /> 
+        </td>
+        <td> 
+          <input type="text" [(ngModel)]="product.name" 
+          placeholder="Name" /> 
+        </td>
+        <td> 
+          <input type="text" [(ngModel)]="product.price" placeholder="Price" /> 
+        </td>
+        <td> 
+          <button *ngIf="!isEdit" class="btn btn-primary" (click)="AddProduct()" 
+          class="btn btn-primary">Add</button>
+          <button *ngIf="isEdit" class="btn btn-primary" (click)="UpdateProduct()"
+            class="btn btn-primary">Update</button>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+</div>
