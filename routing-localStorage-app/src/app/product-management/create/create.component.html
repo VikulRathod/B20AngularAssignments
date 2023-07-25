@@ -1,0 +1,23 @@
+<div class="col-sm-8">
+    <h2>Create Product</h2>
+    <hr />
+    <div class="mb-3"> 
+        <label class="form-label">Product Id</label> 
+        <input type="text" name="id" class="form-control"
+            [(ngModel)]="product.id"> 
+        </div>
+    <div class="mb-3"> 
+        <label class="form-label">Name</label> 
+        <input type="text" name="name" class="form-control"
+            [(ngModel)]="product.name"> 
+        </div>
+    <div class="mb-3"> 
+        <label class="form-label">Price</label> 
+        <input type="text" name="price" class="form-control"
+            [(ngModel)]="product.price"> 
+        </div>
+    <div class="mb-3"> 
+        <input type="submit" value="Save" class="btn btn-primary" (click)="SaveData()" /> 
+        &nbsp; 
+        <a class="btn btn-warning" [routerLink]="['']">Cancel</a> </div>
+</div>
